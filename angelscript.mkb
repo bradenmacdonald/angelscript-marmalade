@@ -1,0 +1,48 @@
+upstream
+{
+	url="http://www.angelcode.com/angelscript/sdk/files/angelscript_2.25.2.zip"
+}
+
+command copy_includes.py
+
+subproject angelscript
+
+options 
+{
+	enable-exceptions=1
+	preinclude=preinclude.h
+	lib
+}
+
+includepath include_build
+
+files
+{
+	# Stupid MKB docs requirement, grumble grumble
+	(docs)
+    angelscript.defines.txt
+    
+	["Angelscript Source"]
+	("upstream/angelscript/include")
+	angelscript.h
+	("upstream/angelscript/source/")
+	"*.h"
+	"*.cpp"
+	as_callfunc_arm_gcc.S
+	
+	["Angelscript Addons"]
+	("upstream/add_on")
+	"autowrapper/*"
+	"contextmgr/*"
+	"debugger/*"
+	"scriptany/*"
+	"scriptarray/*"
+	"scriptbuilder/*"
+	"scriptdictionary/*"
+	"scriptfile/*"
+	"scripthandle/*"
+	"scripthelper/*"
+	"scriptmath/*"
+	"scriptstdstring/*"
+	"serializer/*"
+}

@@ -1,0 +1,7 @@
+define AS_MARMALADE
+
+debug_define AS_DEBUG
+
+includepath "include/"
+
+library ".,angelscript"
