@@ -28,6 +28,7 @@ files
 	("upstream/angelscript/source/")
 	"*.h"
 	"*.cpp"
+	# You must comment out the following line in order to build with Visual Studio :-/
 	as_callfunc_arm_gcc.S
 	
 	["Angelscript Addons"]
