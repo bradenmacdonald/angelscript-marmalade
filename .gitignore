@@ -1,2 +1,4 @@
 build_*
 upstream/
+example/data-ram/
+development.icf

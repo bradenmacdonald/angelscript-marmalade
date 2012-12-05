@@ -1,0 +1,44 @@
+#!/usr/bin/env mkb
+
+options 
+{
+	module_path="../"
+	enable-exceptions=1
+}
+
+# files specifies all files to build
+files
+{
+    [Source]
+	"*.cpp"
+	#"*.h"
+
+	[Scripts]
+	(data)
+	demo.as
+}
+
+subprojects
+{
+    IwUI
+    angelscript
+}
+
+assets
+{
+	(data)
+	demo.as
+	
+    (data-ram/data-gles1)
+    ui.group.bin
+}
+
+defines
+{
+	IW_GXFONT_TTF
+}
+
+debug_defines
+{
+	IW_USE_CALLSTACK
+}
