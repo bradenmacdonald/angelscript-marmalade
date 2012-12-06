@@ -1,2 +1,1 @@
-AS_MARMALADE	Build AngelScript for Marmalade
 AS_DEBUG	Build AngelScript in debug mode

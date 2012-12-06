@@ -1,11 +1,10 @@
-upstream
-{
-	url="http://www.angelcode.com/angelscript/sdk/files/angelscript_2.25.2.zip"
-}
-
 command copy_includes.py
 
+# upstream tarball download command will be added back in here once 2.26 is released
+
 subproject angelscript
+
+debug_define AS_DEBUG
 
 options 
 {
@@ -14,11 +13,9 @@ options
 	lib
 }
 
-includepath include_build
 
 files
 {
-	# Stupid MKB docs requirement, grumble grumble
 	(docs)
     angelscript.defines.txt
     
