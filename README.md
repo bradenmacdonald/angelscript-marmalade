@@ -32,6 +32,20 @@ and compile AngelScript.
 To compile with Visual Studio under certain versions of Marmalade, you may need
 to comment out one line of the MKB file - see note in the MKB file.
 
+### Heap corruption due to stack overflow
+
+If you are experiencing seemingly random heap corruption (which may manifest
+itself in a variety of random errors/bugs/behavior), it is likely due to the
+default stack size of s3e apps being quite small. This is more likely to be
+seen on x86 than ARM builds, as x86 tends to consume more stack. 
+
+To fix this, add the following to your `app.icf`:
+
+```
+[s3e]
+SysStackSize=65536 # default is 32768 (32k) - increase until problem is fixed.
+```
+
 ### Function calls crash or pass garbage when built with XCode
 
 If function calls are not getting passed correctly, make sure that "dead code
